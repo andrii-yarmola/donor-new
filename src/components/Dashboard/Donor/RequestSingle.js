@@ -13,7 +13,7 @@ import AcceptedList from './AcceptedList';
 class RequestSingle extends Component {
   constructor(props) {
     super(props);
-    this.requestId = this.props.navigation.state.params.requestId
+
     this.state = {
       requestDeatials: {
         // this initial state should be removed, get it from server in 'componentDidMount' by async action
@@ -25,14 +25,14 @@ class RequestSingle extends Component {
         patientInfo: 'lorem ipsume lorem ipsumelorem ipsume lorem ipsume lorem ipsume ',
         importantInfo: 'lorem ipsume lorem ipsumelorem ipsume lorem ipsume lorem ipsume ',
         description: 'descr lorem',
-        id: 1, // the same as this.requestId, so maybe should be removed
+        id: 1, // the same as "this.props.navigation.state.params.requestId", so maybe should be removed
       },
     };
   }
   
   componentWillMount() {
-    this.props.navigation.setParams({
-      // titleName: `${this.state.tabObj.tabActive} requests`
+     this.props.navigation.setParams({
+      titleName: `Request no.${this.props.navigation.state.params.requestId}`
     })
   }
 
@@ -42,7 +42,7 @@ class RequestSingle extends Component {
 
   static navigationOptions = ({ navigation }) => {
     return {
-      title: 'some title',
+      title: `${ (navigation.state.params.titleName)? navigation.state.params.titleName : 'Request' }`,
       headerTintColor: 'white',
       headerRight: (
         <TouchableOpacity
@@ -94,7 +94,7 @@ class RequestSingle extends Component {
           <View style={ [styles.itemHolder, styles.itemHolderColumn] }>
             <Text style={ styles.heading }>Important </Text>
             <Text style={ [styles.content, styles.contentSmall] }>
-              { this.state.requestDeatials.description }
+              { this.state.requestDeatials.importantInfo }
             </Text>
           </View>
           <View style={ [styles.itemHolder, styles.itemHolderColumn] }>

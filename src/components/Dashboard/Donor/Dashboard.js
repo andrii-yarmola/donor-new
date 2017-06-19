@@ -57,7 +57,6 @@ class Dashboard extends Component {
           description: 'lorem ipsume lorem ipsumelorem ipsume lorem ipsume lorem ipsume ',
           id: 4,
         },
-
       ],
     };
     this.onTabChange = this.onTabChange.bind(this);
