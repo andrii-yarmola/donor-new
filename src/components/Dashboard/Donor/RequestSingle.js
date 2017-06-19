@@ -106,7 +106,7 @@ class RequestSingle extends Component {
           <View style={ styles.mapHolder }>
             <MapView
               style={styles.map}
-              //save this object to state and recive it from server
+              // recive it from server and save this object to state
               initialRegion={{
                 latitude: 37.78825,
                 longitude: -122.4324,
@@ -118,7 +118,9 @@ class RequestSingle extends Component {
         </ScrollView>
 
         <View style={ styles.footer }>
-          <TouchableOpacity style={ styles.button }>
+          <TouchableOpacity 
+            // we should recive from server isAccepted(bool) and change button type: 'accept' or 'cancel'
+            style={ styles.button }>
             <Text style={ styles.buttonText }> Accept </Text>
           </TouchableOpacity>
         </View>

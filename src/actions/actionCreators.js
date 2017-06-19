@@ -4,7 +4,7 @@ import { AsyncStorage } from 'react-native';
 import setAuthToken from '../utils/setAuthToken';
 
 // API  URL
-const baseURL = 'http://192.168.15.68:1337';
+const BASE_URL = 'http://192.168.15.68:1337';
 
 
 // sync actions
@@ -19,7 +19,7 @@ export const setCurrentUser = (idintifier) => ({
 
 export function login(data) {
   return dispatch => {
-    return axios.post(`${baseURL}/auth`, data).then(res => {
+    return axios.post(`${BASE_URL}/auth`, data).then(res => {
       const token = res.data.token;
       const idintifier = res.data.idintifier;
       if (token) {       
@@ -35,6 +35,6 @@ export function login(data) {
 
 export function userSignupRequest(data) {
   return dispatch => {
-    return axios.post(`${baseURL}/user`, data);  
+    return axios.post(`${BASE_URL}/user`, data);  
   }
 }

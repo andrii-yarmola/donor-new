@@ -1,3 +1,5 @@
+// just an example
+// shoud be removed or changed
 const validate = (values) => {
   const errors = {};
   if (!values.email) {
