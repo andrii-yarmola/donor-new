@@ -30,7 +30,6 @@ class RequestSingle extends Component {
     };
   }
   
-
   componentWillMount() {
     this.props.navigation.setParams({
       // titleName: `${this.state.tabObj.tabActive} requests`
