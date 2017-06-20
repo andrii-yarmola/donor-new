@@ -6,30 +6,34 @@ const TabSet = ({ tabActive, counts, tabArr, onTabChange }) => {
   return (
     <View style={styles.container}>
       <View style={styles.wrapper}>
-        { tabArr.map((item, i) => 
-            (
-              <TouchableOpacity
-                onPress={() => onTabChange(item)}
-                key={item} 
-                style={[
-                  styles.button,
-                  (item === tabActive) && styles.buttonActive,
-                  (i === 1) && styles.buttonRight,
-                  ]} > 
-                <Text 
-                  style={[styles.buttonText, (item === tabActive) && styles.buttonTextActive]} > 
-                  { item }
-                </Text>
-                { (counts[i] > 0) && 
-                  <Text
-                    style={[styles.countLeft, (i === 1) && styles.countRight]} > 
-                    { counts[i] }
+        <View style={styles.holder}>
+          { tabArr.map((item, i) => 
+              (
+                <TouchableOpacity
+                  onPress={() => onTabChange(item)}
+                  key={item} 
+                  style={[
+                    styles.button,
+                    (item === tabActive) && styles.buttonActive,
+                    (i === 1) && styles.buttonRight,
+                    ]} > 
+                  <Text 
+                    style={[styles.buttonText, (item === tabActive) && styles.buttonTextActive]} > 
+                    { item }
                   </Text>
-                }
-              </TouchableOpacity>
-            )  
-          )
-        }
+                </TouchableOpacity>
+              )
+            )
+          }
+        </View>
+        <Text
+          style={[styles.countLeft, styles.countRight]} > 
+          { counts[1] }
+        </Text>
+        <Text
+          style={styles.countLeft} > 
+          { counts[0] }
+        </Text>
       </View>
     </View>
   );
@@ -38,13 +42,19 @@ const TabSet = ({ tabActive, counts, tabArr, onTabChange }) => {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#efeff4',
-    padding: 15,
+    padding: 5,
     alignSelf: 'center',
     width: '100%',
     borderTopColor: '#bcbdbe',
     borderTopWidth: 0.5,
   },
   wrapper: {
+    alignSelf: 'center',
+    width: 315,
+    height: 50,
+    padding: 10
+  },
+  holder: {
     alignSelf: 'center',
     width: 295,
     height: 30,
@@ -53,7 +63,6 @@ const styles = StyleSheet.create({
     borderColor: '#88c025',
     borderRadius: 15,
     flexDirection: 'row',
-    //overflow: 'hidden',
   },
   button: {
     borderTopLeftRadius: 15,
@@ -89,8 +98,8 @@ const styles = StyleSheet.create({
     color: 'white',
     textAlign: 'center',
     position: 'absolute',
-    left: -6,
-    top: -12,
+    left: 4,
+    top: -2,
     padding: 4,
     backgroundColor: '#ff7600',
     width: 23,
@@ -100,7 +109,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden'
   },
   countRight: {
-    right: -6,
+    right: 4,
     left: null,
   }
 });

@@ -109,7 +109,8 @@ class Settings extends Component {
       </TouchableOpacity>
       ),
       headerStyle: { backgroundColor: 'white', shadowColor: 'transparent' },
-      title: 'Settings'
+      title: 'Settings',
+      headerTitleStyle : { paddingHorizontal: 20}
     }
   };
 
@@ -202,7 +203,7 @@ const styles = StyleSheet.create({
     fontSize: 17,
     lineHeight: 25,
     marginLeft: 5,
-    marginBottom: 3
+    marginBottom: 2
   },
   backButton: {
     flexDirection: 'row',
