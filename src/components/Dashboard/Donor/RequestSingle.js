@@ -133,7 +133,7 @@ class RequestSingle extends Component {
 
 const styles = StyleSheet.create({
   map: {
-    height: 250
+    height: 250,
   },
   header: {
   },
