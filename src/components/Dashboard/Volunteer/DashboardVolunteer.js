@@ -5,20 +5,19 @@ import { connect } from 'react-redux';
 import * as actionCreators from './../../../actions/actionCreators';
 import { bindActionCreators } from 'redux';
 
-import TabSet from './TabSet';
+import TabSet from './../TabSet';
 import IncomingList from './IncomingList';
-import AcceptedList from './AcceptedList';
+import SentList from './SentList';
 
 class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
       tabObj: {
-        tabActive: 'Incoming',
-        tabArr: ['Incoming', 'Accepted'],
-        counts: [ 3, 2 ]
+        tabActive: 'Sent',
+        tabArr: ['Drafts', 'Sent'],
       },
-      incomingData: [
+      draftsData: [
         // this initial state should be removed, get it from server in 'componentDidMount' by async action
         {
           bloodType: 'Whole Blood',
@@ -38,7 +37,7 @@ class Dashboard extends Component {
           id: 2
         }
       ],
-      acceptedData: [
+      sentData: [
         {
           bloodType: 'Apheresis',
           postedTime: 'Just now',
@@ -47,6 +46,9 @@ class Dashboard extends Component {
           location: "Children's Hospital 16, 2 Lui pastera St.",
           description: 'lorem ipsume lorem ipsumelorem ipsume lorem ipsume lorem ipsume ',
           id: 3,
+          status: 'Sent',
+          amountTotal: 17,
+          amountNow: 12
         },
         {
           bloodType: 'Apheresis',
@@ -56,6 +58,9 @@ class Dashboard extends Component {
           location: "Children's Hospital 16, 2 Lui pastera St.",
           description: 'lorem ipsume lorem ipsumelorem ipsume lorem ipsume lorem ipsume ',
           id: 4,
+          status: 'Done',
+          amountTotal: 17,
+          amountNow: 12
         },
       ],
     };
@@ -83,7 +88,19 @@ class Dashboard extends Component {
     return {
       title: `${ (navigation.state.params)? navigation.state.params.titleName : '' }`,
       headerTintColor: 'white',
-      headerLeft: null,
+      headerLeft: 
+        <TouchableOpacity
+          onPress={
+            () => {
+              navigation.navigate('Settings')
+            }
+          }
+          style={styles.newButton}
+        >
+        <Icon name="md-chatboxes" size={21} color='white' />
+        <Text style={styles.newButtonText} > New </Text>
+      </TouchableOpacity>
+      ,
       headerRight: (
         <TouchableOpacity
           onPress={
@@ -103,21 +120,21 @@ class Dashboard extends Component {
   render() {
     return (
       <View style={ styles.container }>
-        { (this.state.tabObj.tabActive === 'Incoming') ? 
+        { (this.state.tabObj.tabActive === 'Drafts') ? 
           <IncomingList 
-            incomingData = { this.state.incomingData}
+            incomingData = { this.state.draftsData}
             navigate = { this.props.navigation.navigate }
           /> 
           : 
-          <AcceptedList 
-            incomingData = { this.state.acceptedData}
+          <SentList 
+            incomingData = { this.state.sentData}
             navigate = { this.props.navigation.navigate }
           />
         }
         <TabSet 
           tabActive = { this.state.tabObj.tabActive }
           tabArr = { this.state.tabObj.tabArr }
-          counts = { [this.state.incomingData.length, this.state.acceptedData.length] }
+          counts = { [this.state.draftsData.length, this.state.sentData.length] }
           onTabChange = { this.onTabChange }
         />
       </View>
@@ -134,6 +151,15 @@ const styles = StyleSheet.create({
   },
   backButton: {
     marginHorizontal: 15 
+  },
+  newButton: {
+    flexDirection: 'row',
+    marginHorizontal: 15
+  },
+  newButtonText: {
+    color: 'white',
+    fontSize: 17,
+    marginHorizontal: 5
   }
 });
 

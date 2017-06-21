@@ -6,7 +6,8 @@ import Welcome from './components/Welcome/Welcome';
 import TermsAndConditions from './components/TermsAndConditions';
 import Settings from './components/Settings';
 import RegistrationWrap from './components/Registration/RegistrationWrap';
-import Dashboard from './components/Dashboard/Donor/Dashboard';
+import DashboardDonor from './components/Dashboard/Donor/DashboardDonor';
+import DashboardVolunteer from './components/Dashboard/Volunteer/DashboardVolunteer';
 import RegistrationDone from './components/Registration/RegistrationDone';
 import RequestSingle from './components/Dashboard/Donor/RequestSingle';
 
@@ -24,14 +25,15 @@ const AppNavigator = StackNavigator(
     Welcome: { screen: Welcome },
     TermsAndConditions: { screen: TermsAndConditions },
     RegistrationWrap: { screen: RegistrationWrap },
-    Dashboard: { screen: Dashboard },
+    DashboardDonor: { screen: DashboardDonor },
+    DashboardVolunteer: { screen: DashboardVolunteer },
     RegistrationDone: { screen: RegistrationDone },
     Settings: { screen: Settings },
     RequestSingle: { screen: RequestSingle },
   }, 
   { 
     headerMode: 'screen',
-    initialRouteName: 'Dashboard'
+    initialRouteName: 'DashboardVolunteer'
   }
 );
 
