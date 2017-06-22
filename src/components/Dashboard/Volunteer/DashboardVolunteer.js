@@ -90,7 +90,7 @@ class Dashboard extends Component {
         <TouchableOpacity
           onPress={
             () => {
-              // navigation.navigate('Settings') // not to settings, just to 'new req page'
+              navigation.navigate('NewRequest')
             }
           }
           style={styles.newButton}

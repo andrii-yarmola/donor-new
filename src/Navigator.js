@@ -10,6 +10,7 @@ import DashboardDonor from './components/Dashboard/Donor/DashboardDonor';
 import DashboardVolunteer from './components/Dashboard/Volunteer/DashboardVolunteer';
 import RegistrationDone from './components/Registration/RegistrationDone';
 import RequestSingle from './components/Dashboard/Donor/RequestSingle';
+import NewRequest from './components/Dashboard/Volunteer/NewRequest';
 
 import * as actionCreators from './actions/actionCreators';
 
@@ -32,11 +33,12 @@ const AppNavigator = StackNavigator(
     RequestSingle: { screen: RequestSingle },
 
     DashboardVolunteer: { screen: DashboardVolunteer },
+    NewRequest: { screen: NewRequest },
     // req single for  volun
   }, 
   { 
     headerMode: 'screen',
-    initialRouteName: 'DashboardVolunteer'
+    initialRouteName: 'Welcome'
   }
 );
 

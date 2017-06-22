@@ -11,8 +11,8 @@ const BloodType = t.enums({
   Ap: 'A(II) Rh+',
   Bm: 'B(III) Rh-',
   Bp: 'B(III) Rh+',
-  ABp: 'AB(IV) Rh-',
-  ABm: 'AB(IV) Rh+',
+  ABm: 'AB(IV) Rh-',
+  ABp: 'AB(IV) Rh+',
   IDK: "I don't know my blood type"
 });
 
@@ -100,9 +100,6 @@ const styles = StyleSheet.create({
   submit: {
     alignSelf: 'center',
     marginVertical: 25
-  },
-  toggle: {
-
   },
   submitText: {
     fontSize: 24,

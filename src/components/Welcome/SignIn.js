@@ -22,7 +22,7 @@ const options = {
     identifier: {
       placeholder: 'Email / Phone',
       keyboardType: 'email-address',
-      error: 'Insert a valid email or phone'
+      // error: 'Insert a valid email or phone'
     },
     password: {
       secureTextEntry: true,
