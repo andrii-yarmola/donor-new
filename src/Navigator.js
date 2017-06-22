@@ -25,11 +25,14 @@ const AppNavigator = StackNavigator(
     Welcome: { screen: Welcome },
     TermsAndConditions: { screen: TermsAndConditions },
     RegistrationWrap: { screen: RegistrationWrap },
-    DashboardDonor: { screen: DashboardDonor },
-    DashboardVolunteer: { screen: DashboardVolunteer },
     RegistrationDone: { screen: RegistrationDone },
     Settings: { screen: Settings },
+    
+    DashboardDonor: { screen: DashboardDonor },
     RequestSingle: { screen: RequestSingle },
+
+    DashboardVolunteer: { screen: DashboardVolunteer },
+    // req single for  volun
   }, 
   { 
     headerMode: 'screen',

@@ -6,7 +6,7 @@ import * as actionCreators from './../../../actions/actionCreators';
 import { bindActionCreators } from 'redux';
 
 import TabSet from './../TabSet';
-import IncomingList from './IncomingList';
+import DraftsList from './DraftsList';
 import SentList from './SentList';
 
 class Dashboard extends Component {
@@ -14,14 +14,13 @@ class Dashboard extends Component {
     super(props);
     this.state = {
       tabObj: {
-        tabActive: 'Sent',
+        tabActive: 'Drafts',
         tabArr: ['Drafts', 'Sent'],
       },
       draftsData: [
         // this initial state should be removed, get it from server in 'componentDidMount' by async action
         {
           bloodType: 'Whole Blood',
-          postedTime: 'Just now',
           donationDate: '23 December 2018',
           donationTime: '18:30',
           location: "Children's Hospital 16, 2 Lui pastera St.",
@@ -30,7 +29,6 @@ class Dashboard extends Component {
         },
         {
           bloodType: 'Whole Blood 2',
-          postedTime: 'Just now',
           donationDate: '23 December 2018',
           donationTime: '18:30',
           location: "Children's Hospital 16, 2 Lui pastera St.",
@@ -59,8 +57,8 @@ class Dashboard extends Component {
           description: 'lorem ipsume lorem ipsumelorem ipsume lorem ipsume lorem ipsume ',
           id: 4,
           status: 'Done',
-          amountTotal: 17,
-          amountNow: 12
+          amountTotal: 2,
+          amountNow: 1
         },
       ],
     };
@@ -92,7 +90,7 @@ class Dashboard extends Component {
         <TouchableOpacity
           onPress={
             () => {
-              navigation.navigate('Settings')
+              // navigation.navigate('Settings') // not to settings, just to 'new req page'
             }
           }
           style={styles.newButton}
@@ -121,7 +119,7 @@ class Dashboard extends Component {
     return (
       <View style={ styles.container }>
         { (this.state.tabObj.tabActive === 'Drafts') ? 
-          <IncomingList 
+          <DraftsList 
             incomingData = { this.state.draftsData}
             navigate = { this.props.navigation.navigate }
           /> 

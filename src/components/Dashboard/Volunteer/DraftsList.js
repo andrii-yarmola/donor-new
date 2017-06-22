@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, FlatList } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import IconFA from 'react-native-vector-icons/FontAwesome';
 
 const IncomingList = ({ incomingData, navigate }) => {
   return (
@@ -31,7 +32,7 @@ const IncomingList = ({ incomingData, navigate }) => {
                   </View>
                 }
               </View>
-              <Icon name="ios-arrow-forward" size={20} color='#8e8e93' style={styles.sideIcon}/>
+              <IconFA name="pencil" size={14} color='#8e8e93' style={styles.sideIcon}/>
               <Text style={styles.sideText}>
                 { item.postedTime }
               </Text>
