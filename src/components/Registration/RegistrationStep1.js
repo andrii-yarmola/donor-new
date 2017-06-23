@@ -20,6 +20,7 @@ const BloodType = t.enums({
 const structure = t.struct({
   bloodType: BloodType,
   isAlreadyDonor: t.Boolean,
+  //isAlreadyDonor: t.Date,
 });
 
 // form options

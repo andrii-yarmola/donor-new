@@ -22,7 +22,6 @@ const options = {
     identifier: {
       placeholder: 'Email / Phone',
       keyboardType: 'email-address',
-      // error: 'Insert a valid email or phone'
     },
     password: {
       secureTextEntry: true,
@@ -53,8 +52,13 @@ export default class SignIn extends Component {
       
       this.props.login(value).then(
         (res) => this.props.navigate('Dashboard'),
-        (err) => console.log('my error', err)
+        (err) => {
+          console.log('my error', err)
+          //this.setState({error: err})
+        }
       );
+
+      
       
       this.clearForm();
     }

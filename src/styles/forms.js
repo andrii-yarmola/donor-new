@@ -3,6 +3,7 @@ var t = require('tcomb-form-native');
 const stylesheet = t.form.Form.stylesheet;
 
 // overriding global styles for ALL forms t-comb
+
 stylesheet.textbox.normal.borderWidth = 0;
 stylesheet.textbox.error.borderWidth = 0;
 stylesheet.textbox.normal.marginBottom = 0;
@@ -43,8 +44,7 @@ stylesheet.textboxView.error.height = 45;
 stylesheet.textboxView.normal.padding = 5;
 stylesheet.textboxView.error.padding = 5;
 
-stylesheet.textbox.normal.marginBottom = 0;
-stylesheet.textbox.error.marginBottom = 0;
+
 
 stylesheet.formGroup.normal.flexDirection = 'row';
 stylesheet.formGroup.error.flexDirection = 'row';
@@ -55,11 +55,12 @@ stylesheet.formGroup.error.borderWidth = 0;
 stylesheet.formGroup.normal.borderBottomWidth = 0.5;
 stylesheet.formGroup.error.borderBottomWidth = 0.5;
 stylesheet.formGroup.normal.borderColor = '#bcbdbe';
-stylesheet.formGroup.error.borderColor = '#bcbdbe';
+stylesheet.formGroup.error.borderColor = 'red';
 stylesheet.formGroup.normal.marginBottom = 0;
 stylesheet.formGroup.error.marginBottom = 0;
 stylesheet.formGroup.normal.marginLeft = 15;
 stylesheet.formGroup.error.marginLeft = 15;
+
 
 //stylesheet.controlLabel.normal.width = 125;
 //stylesheet.controlLabel.error.width = 125;
@@ -80,6 +81,12 @@ stylesheet.checkbox.normal.marginBottom = 7;
 stylesheet.checkbox.error.marginBottom = 7;
 stylesheet.checkbox.normal.marginHorizontal = 10;
 stylesheet.checkbox.error.marginHorizontal = 10;
+
+// stylesheet.formGroup.error.marginBottom = 30;
+// stylesheet.errorBlock.flexBasis = '100%';
+// stylesheet.errorBlock.position = 'absolute';
+// stylesheet.errorBlock.bottom = -25;
+// stylesheet.errorBlock.left = 0;
 
 
 
