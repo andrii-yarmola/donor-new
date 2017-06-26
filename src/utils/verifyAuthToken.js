@@ -1,4 +1,4 @@
-import jwt from 'jsonwebtoken';
+// import jwt from 'jsonwebtoken';
 import { setCurrentUser } from '../actions/actionCreators';
 import setAuthToken from './setAuthToken';
 import store, { history } from '../store';

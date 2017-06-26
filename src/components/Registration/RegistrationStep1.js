@@ -92,7 +92,6 @@ const styles = StyleSheet.create({
   heading: {
     fontSize: 32,
     lineHeight: 40,
-    fontFamily: 'Avenir',
     fontWeight: '100',
     textAlign: 'center',
     paddingHorizontal: 5,
@@ -105,7 +104,6 @@ const styles = StyleSheet.create({
   submitText: {
     fontSize: 24,
     color: '#b1e35f',
-    fontFamily: 'Avenir',
   }
 });
 

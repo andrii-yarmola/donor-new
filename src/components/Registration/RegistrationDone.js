@@ -51,7 +51,6 @@ const styles = StyleSheet.create({
   },
   heading: {
     fontSize: 50,
-    fontFamily: 'Avenir',
     fontWeight: '100',
     textAlign: 'center',
     paddingHorizontal: 5,
@@ -89,7 +88,6 @@ const styles = StyleSheet.create({
     fontSize: 24,
     lineHeight: 37,
     alignSelf: 'center',
-    fontFamily: 'Avenir',
     fontWeight: '100'
   },
 });

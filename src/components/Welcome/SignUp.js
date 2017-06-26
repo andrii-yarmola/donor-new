@@ -52,7 +52,6 @@ const styles = StyleSheet.create({
     fontSize: 24,
     lineHeight: 37,
     alignSelf: 'center',
-    fontFamily: 'Avenir',
     fontWeight: '100'
   },
   logo: {
