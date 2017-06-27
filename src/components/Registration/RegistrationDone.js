@@ -19,7 +19,7 @@ class RegistrationDone extends Component {
         </View>
         <Text style={styles.text}> Remember you can always change notification preferences and personal information using settings. </Text>
         <TouchableOpacity
-          onPress={() => navigate('Dashboard')}
+          onPress={() => navigate('DashboardDonor')}
           style={styles.button}
         >
           <Text style={styles.buttonText}> Start </Text>
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     alignSelf: 'center',
     backgroundColor: 'transparent',
-    color: 'white'
+    color: 'white',
   },
   text: {
     fontSize: 17,
@@ -74,6 +74,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 10,
     alignSelf: 'center',
+    color: '#8e8e93'
   },
   button: {
     borderRadius: 30,
@@ -88,7 +89,6 @@ const styles = StyleSheet.create({
     fontSize: 24,
     lineHeight: 37,
     alignSelf: 'center',
-    fontWeight: '100'
   },
 });
 

@@ -38,7 +38,7 @@ const AppNavigator = StackNavigator(
   }, 
   { 
     headerMode: 'screen',
-    initialRouteName: 'Welcome'
+    initialRouteName: 'DashboardVolunteer'
   }
 );
 

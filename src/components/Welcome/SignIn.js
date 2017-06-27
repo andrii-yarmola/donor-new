@@ -119,7 +119,6 @@ const styles = StyleSheet.create({
     fontSize: 24,
     lineHeight: 37,
     alignSelf: 'center',
-    fontWeight: '100'
   },
   link: {
     alignSelf: 'center'

@@ -123,7 +123,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 10,
     marginBottom: 10,
-    alignSelf: 'center'
+    alignSelf: 'center',
+    color: '#8e8e93'
   },
   submit: {
     alignSelf: 'center',

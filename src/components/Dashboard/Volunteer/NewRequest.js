@@ -9,8 +9,11 @@ const t = require('tcomb-form-native/lib');
 const Form = t.form.Form;
 
 const donationType = t.enums({
-  M: 'Type 1',
-  F: 'Type 2'
+  WholeBlood: 'Whole blood',
+  DoubleRedCell: 'Double Red Cell',
+  Plasma: 'Plasma',
+  Platelets: 'Platelets',
+  RedCells: 'Red Cells',
 });
 
 const bloodType = t.enums({
@@ -22,15 +25,14 @@ const bloodType = t.enums({
   Bp: 'B(III) Rh+',
   ABm: 'AB(IV) Rh-',
   ABp: 'AB(IV) Rh+',
-  IDK: "I don't know my blood type"
 });
 
 // form model
 const structure = t.struct({
   donationType: donationType,
   bloodType: bloodType,
-  date: t.String, // date and time picker
-  time: t.String,
+  date: t.Date, // date and time picker
+  time: t.Date,
   location: t.String,
   patientInfo: t.String,
   Description: t.String,
@@ -50,6 +52,14 @@ const options = {
     bloodType: {
       nullOption: {value: '', text: 'Specify'}
     },
+    date: {
+      mode: 'date',
+      format: null // should be formated by Moment.js ; just function that returns formated date and time
+    },
+    time: {
+      mode: 'time',
+      minuteInterval: 15
+    }
   }
 };
 
