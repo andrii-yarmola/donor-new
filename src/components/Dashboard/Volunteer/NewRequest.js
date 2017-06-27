@@ -4,7 +4,9 @@ import { connect } from 'react-redux';
 import * as actionCreators from './../../../actions/actionCreators';
 import { bindActionCreators } from 'redux';
 import Icon from 'react-native-vector-icons/Ionicons';
+import moment from 'moment';
 const t = require('tcomb-form-native/lib');
+
 
 const Form = t.form.Form;
 
@@ -54,11 +56,20 @@ const options = {
     },
     date: {
       mode: 'date',
-      format: null // should be formated by Moment.js ; just function that returns formated date and time
+      config: {
+        format: (date) => {    
+          return moment(date).format("DD MMMM YYYY")
+        }
+      }
     },
     time: {
       mode: 'time',
-      minuteInterval: 15
+      minuteInterval: 15,
+      config: {
+        format: (date) => {    
+          return moment(date).format("hh:mm")
+        }
+      }
     }
   }
 };

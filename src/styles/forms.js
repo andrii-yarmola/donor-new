@@ -82,6 +82,19 @@ stylesheet.checkbox.error.marginBottom = 7;
 stylesheet.checkbox.normal.marginHorizontal = 10;
 stylesheet.checkbox.error.marginHorizontal = 10;
 
+stylesheet.dateTouchable.normal.flex = 1; 
+stylesheet.dateTouchable.error.flex = 1;
+stylesheet.dateTouchable.normal.width = 250; 
+stylesheet.dateTouchable.error.flex = 250;
+stylesheet.dateTouchable.normal.paddingTop = 4; 
+stylesheet.dateTouchable.error.paddingTop = 4;
+stylesheet.dateTouchable.normal.paddingHorizontal = 5; 
+stylesheet.dateTouchable.error.paddingHorizontal = 5;
+
+stylesheet.dateValue.normal.textAlign = 'right';
+stylesheet.dateValue.error.textAlign = 'right';
+
+
 // stylesheet.formGroup.error.marginBottom = 30;
 // stylesheet.errorBlock.flexBasis = '100%';
 // stylesheet.errorBlock.position = 'absolute';

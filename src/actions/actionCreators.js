@@ -9,7 +9,7 @@ const BASE_URL = 'http://192.168.15.68:1337';
 
 // sync actions
 
-// TODO: im not sure about next 2 lines. removed 'export'
+// TODO: not sure about next 2 lines. removed 'export'
 // export const SET_CURRENT_USER = 'SET_CURRENT_USER';
 const SET_CURRENT_USER = 'SET_CURRENT_USER';
 export const setCurrentUser = (idintifier) => ({

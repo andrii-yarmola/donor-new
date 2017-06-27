@@ -1,3 +1,6 @@
+// just an example
+// shoud be removed or changed
+
 import React from 'react';
 import { connect } from 'react-redux';
 
