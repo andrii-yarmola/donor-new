@@ -55,9 +55,6 @@ const SentList = ({ incomingData, navigate }) => {
                     { item.amountTotal }
                   </Text>
                 </View>
-
-                
-                
               </TouchableOpacity>
             </View>
           )}
@@ -88,26 +85,27 @@ const SentList = ({ incomingData, navigate }) => {
 
 const styles = StyleSheet.create({
   chart: {
-    width: 32,
-    height: 32,
+    width: 31,
+    height: 31,
     position: 'absolute',
     left: 0,
     top: 0,
   },
   amountNow: {
     color: '#b1e460',
+    backgroundColor: 'white',
     position: 'absolute',
     left: 3,
     top: 3,
-    width: 25,
-    height: 25,
+    width: 24,
+    height: 24,
     borderRadius: 13,
     paddingVertical: 4,
     textAlign: 'center',
     overflow: 'hidden'
   },
   pieHolder: {
-    borderWidth: 0.5,
+    borderWidth: 1,
     borderColor: '#88c025',
     width: 32,
     height: 32,
