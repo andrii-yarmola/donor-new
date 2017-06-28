@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, FlatList } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import PieChart from 'react-native-pie-chart';
+import Chart from 'react-native-chart';
 
 const SentList = ({ incomingData, navigate }) => {
   return (
@@ -44,15 +44,19 @@ const SentList = ({ incomingData, navigate }) => {
                 <Icon name="ios-arrow-forward" size={20} color='#8e8e93' style={styles.sideIcon}/>
 
                 <View style={styles.pieHolder}>
-                  <PieChart
-                    chart_wh={ 31 }
-                    series={[ item.amountTotal - item.amountNow, item.amountNow ]}
-                    sliceColor={ ['white','#b1e35f'] }
+                  <Chart
+                    style={styles.chart}
+                    data={[[1, item.amountTotal - item.amountNow], [2, item.amountNow]]}
+                    type="pie"
+                    showAxis={false}
+                    sliceColors={["white", "#b1e35f"]}
                   />
                   <Text style={styles.amountNow}>
                     { item.amountTotal }
                   </Text>
                 </View>
+
+                
                 
               </TouchableOpacity>
             </View>
@@ -83,6 +87,13 @@ const SentList = ({ incomingData, navigate }) => {
 };
 
 const styles = StyleSheet.create({
+  chart: {
+    width: 32,
+    height: 32,
+    position: 'absolute',
+    left: 0,
+    top: 0,
+  },
   amountNow: {
     color: '#b1e460',
     position: 'absolute',

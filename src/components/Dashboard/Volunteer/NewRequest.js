@@ -124,6 +124,7 @@ class NewRequest extends Component {
       </TouchableOpacity>
       ),
       headerStyle: { backgroundColor: '#88c025', shadowColor: 'transparent' },
+      headerTitleStyle : { paddingHorizontal: 20}
     }
   };
 
