@@ -1,4 +1,5 @@
 var t = require('tcomb-form-native');
+import { Dimensions } from 'react-native';
 
 const stylesheet = t.form.Form.stylesheet;
 
@@ -44,8 +45,6 @@ stylesheet.textboxView.error.height = 45;
 stylesheet.textboxView.normal.padding = 5;
 stylesheet.textboxView.error.padding = 5;
 
-
-
 stylesheet.formGroup.normal.flexDirection = 'row';
 stylesheet.formGroup.error.flexDirection = 'row';
 stylesheet.formGroup.normal.justifyContent = 'space-between';
@@ -82,17 +81,22 @@ stylesheet.checkbox.error.marginBottom = 7;
 stylesheet.checkbox.normal.marginHorizontal = 10;
 stylesheet.checkbox.error.marginHorizontal = 10;
 
-stylesheet.dateTouchable.normal.flex = 1; 
-stylesheet.dateTouchable.error.flex = 1;
-stylesheet.dateTouchable.normal.width = 250; 
-stylesheet.dateTouchable.error.flex = 250;
-stylesheet.dateTouchable.normal.paddingTop = 4; 
-stylesheet.dateTouchable.error.paddingTop = 4;
-stylesheet.dateTouchable.normal.paddingHorizontal = 5; 
-stylesheet.dateTouchable.error.paddingHorizontal = 5;
+stylesheet.dateTouchable.normal.paddingTop = 32; 
+stylesheet.dateTouchable.error.paddingTop = 32; 
+stylesheet.dateTouchable.normal.marginLeft = -25; 
+stylesheet.dateTouchable.error.marginLeft = -25; 
+
 
 stylesheet.dateValue.normal.textAlign = 'right';
 stylesheet.dateValue.error.textAlign = 'right';
+
+// should be reworked:
+stylesheet.dateValue.normal.width = Dimensions.get('window').width - 30;
+stylesheet.dateValue.normal.marginTop = -29;
+stylesheet.dateValue.normal.marginBottom = 8;
+stylesheet.dateValue.error.width = Dimensions.get('window').width - 30;
+stylesheet.dateValue.error.marginTop = -29;
+stylesheet.dateValue.error.marginBottom = 8;
 
 
 // stylesheet.formGroup.error.marginBottom = 30;
