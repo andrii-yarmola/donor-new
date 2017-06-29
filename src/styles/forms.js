@@ -85,6 +85,8 @@ stylesheet.dateTouchable.normal.paddingTop = 32;
 stylesheet.dateTouchable.error.paddingTop = 32; 
 stylesheet.dateTouchable.normal.marginLeft = -25; 
 stylesheet.dateTouchable.error.marginLeft = -25; 
+stylesheet.dateTouchable.normal.backgroundColor = 'transparent'; 
+stylesheet.dateTouchable.error.backgroundColor = 'transparent'; 
 
 
 stylesheet.dateValue.normal.textAlign = 'right';
